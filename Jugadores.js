@@ -1,4 +1,4 @@
-// clase Jugador con atributos nombre, puntos, vidaMaxima e inventario
+// clase Jugadores con atributos nombre, puntos, vidaMaxima e inventario
 export class Jugadores {
     nombre;
     puntos = 0;
@@ -12,10 +12,19 @@ export class Jugadores {
 
     //añadir objetos al inventario
     añadirObjeto(objeto) {
-        const objetoClone = { ...objeto };
+        const objetoClone = {
+            ...objeto
+        };
         this.inventario.push(objetoClone);
     }
 
-    //sumar puntos despues de la batalla
+    //sumar puntos al jugador cuando gane batallas.
+    sumarPuntos(puntos) {
+        this.puntos += puntos;
+    }
     
+    //Obtener ataque total: Calculará el ataque en función de los objetos.
+    //Obtener defensa total: Calculará la defensa en función de los objetos.
+    //Agrupar inventario por tipo de objeto.
+    //Mostrar jugador: Se mostrará su nombre, puntos, vida, ataque, defensa e inventario.
 }
