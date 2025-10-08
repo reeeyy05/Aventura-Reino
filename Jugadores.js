@@ -30,30 +30,53 @@ export class Jugadores {
 
     //Obtener ataque total: Calculará el ataque en función de los objetos.
     ataqueTotal() {
-        return this.inventario
-            .filter(objeto => objeto.tipo === 'arma')
-            .reduce((total, objeto) => total + (objeto.ataque || 0), 0);
+        let miAtaque = 3; // Empiezo con 3
+        
+        // Busco todas mis armas
+        for (let cosa of this.inventario) {// Recorro inventario
+            if (cosa.tipo === 'arma') {// Si es arma
+                miAtaque += cosa.ataque ? cosa.ataque : 0;// Sumo su ataque si lo tiene
+            }
+        }
+        
+        return miAtaque;
     }
+
     //Obtener defensa total: Calculará la defensa en función de los objetos.
     defensaTotal() {
-        return this.inventario
-            .filter(objeto => objeto.tipo === 'armadura')
-            .reduce((total, objeto) => total + (objeto.defensa || 0), 0);
+        let miDefensa = 6; // Empiezo con 6
+        
+        // Busco todas mis armaduras
+        for (let cosa of this.inventario) {
+            if (cosa.tipo === 'armadura') {// Si es armadura
+                miDefensa += cosa.defensa ? cosa.defensa : 0;// Sumo su defensa si la tiene
+            }
+        }
+        
+        return miDefensa;
     }
 
     //Agrupar inventario por tipo de objeto.
     inventarioPorTipo() {
-        return this.inventario.reduce((grupos, objeto) => {
-            if (!grupos[objeto.tipo]) grupos[objeto.tipo] = [];
-            grupos[objeto.tipo].push(objeto);
-            return grupos;
-        }, {});
+        const grupos = {};
+        
+        for (let cosa of this.inventario) {
+            // Si no existe el grupo, lo creo
+            if (!grupos[cosa.tipo]) {
+                grupos[cosa.tipo] = [];
+            }
+            // Añado el objeto al grupo
+            grupos[cosa.tipo].push(cosa);
+        }
+        
+        return grupos;
     }
     //Mostrar jugador: Se mostrará su nombre, puntos, vida, ataque, defensa e inventario.
     mostrar() {
         return {
             nombre: this.nombre,
             puntos: this.puntos,
+            vida: this.vida, // Añadir vida actual
             vidaMaxima: this.vidaMaxima,
             ataque: this.ataqueTotal(),
             defensa: this.defensaTotal(),
