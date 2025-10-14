@@ -27,7 +27,7 @@ class Producto {
     */
     presentar() {
         const precioFormateado = this.formatearPrecio();
-        return `El producto ${this.nombre} es de tipo ${this.tipo}, tiene una rareza de ${this.rareza}, un precio de ${precioFormateado} y otorga un bonus de ${this.bonus}.`;
+        return `El producto ${this.nombre} es de tipo ${this.tipo}, tiene una rareza de ${this.rareza}, un precio de ${EUR.format(this.precio)} y otorga un bonus de ${this.bonus}.`;
     }
 
     /**
@@ -40,13 +40,24 @@ class Producto {
 
     /**
     * Aplica un descuento del 50% al precio recibido y lo asigna al producto.
-    * @param precio Precio original al que se aplica el descuento.
+    * @param porcentaje Porcentaje de descuento a aplicar (0-100).
     * @returns Nuevo precio tras aplicar el descuento.
     */
-    aplicarDescuento(precio) {
-        this.precio = precio * 0.5;
-        return this.precio;
+    aplicarDescuento(porcentaje) {
+       if (porcentaje < 0) porcentaje = 0;
+       if (porcentaje > 100) porcentaje = 100; 
+       
+       const nuevoPrecio = this.precio * (1 - porcentaje / 100);
+       this.precio = Math.round(nuevoPrecio);
+       return this.precio;
     }
+
+    
 }
 
 export { Producto };
+
+export const EUR = new Intl.NumberFormat('es-ES' , {
+    style: 'currency'
+    , currency: 'EUR'
+});
