@@ -30,7 +30,7 @@ export class Jugadores {
 
     //Obtener ataque total: Calculará el ataque en función de los objetos.
     ataqueTotal() {
-        let miAtaque = 3; // Empiezo con 3
+        let miAtaque = 0; // Empiezo con 0
         
         // Busco todas mis armas
         for (let objeto of this.inventario) {// Recorro inventario
@@ -44,7 +44,7 @@ export class Jugadores {
 
     //Obtener defensa total: Calculará la defensa en función de los objetos.
     defensaTotal() {
-        let miDefensa = 6; // Empiezo con 6
+        let miDefensa = 0; // Empiezo con 0
         
         // Busco todas mis armaduras
         for (let objeto of this.inventario) {
@@ -86,3 +86,10 @@ export class Jugadores {
 }
 
 //Exportar la clase Jugadores
+
+// const jugador1 = new Jugadores('Heroe');
+// jugador1.añadirObjeto({ nombre: 'Espada', tipo: 'arma', ataque: 15 });
+// jugador1.añadirObjeto({ nombre: 'Escudo', tipo: 'armadura', defensa: 10 });
+// jugador1.sumarPuntos(50);
+
+// console.log(jugador1.mostrar());
