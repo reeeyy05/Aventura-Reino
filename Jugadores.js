@@ -33,9 +33,9 @@ export class Jugadores {
         let miAtaque = 3; // Empiezo con 3
         
         // Busco todas mis armas
-        for (let cosa of this.inventario) {// Recorro inventario
-            if (cosa.tipo === 'arma') {// Si es arma
-                miAtaque += cosa.ataque ? cosa.ataque : 0;// Sumo su ataque si lo tiene
+        for (let objeto of this.inventario) {// Recorro inventario
+            if (objeto.tipo === 'arma') {// Si es arma
+                miAtaque += objeto.ataque ? objeto.ataque : 0;// Sumo su ataque si lo tiene
             }
         }
         
@@ -47,9 +47,9 @@ export class Jugadores {
         let miDefensa = 6; // Empiezo con 6
         
         // Busco todas mis armaduras
-        for (let cosa of this.inventario) {
-            if (cosa.tipo === 'armadura') {// Si es armadura
-                miDefensa += cosa.defensa ? cosa.defensa : 0;// Sumo su defensa si la tiene
+        for (let objeto of this.inventario) {
+            if (objeto.tipo === 'armadura') {// Si es armadura
+                miDefensa += objeto.defensa ? objeto.defensa : 0;// Sumo su defensa si la tiene
             }
         }
         
@@ -60,13 +60,13 @@ export class Jugadores {
     inventarioPorTipo() {
         const grupos = {};
         
-        for (let cosa of this.inventario) {
+        for (let objeto of this.inventario) {
             // Si no existe el grupo, lo creo
-            if (!grupos[cosa.tipo]) {
-                grupos[cosa.tipo] = [];
+            if (!grupos[objeto.tipo]) {
+                grupos[objeto.tipo] = [];
             }
             // Añado el objeto al grupo
-            grupos[cosa.tipo].push(cosa);
+            grupos[objeto.tipo].push(objeto);
         }
         
         return grupos;
