@@ -10,17 +10,12 @@ export class Mercado {
 
     // Filtrar productos por una rareza dada
     filtrarPorRareza(rareza) {
-        return this.listaProductos.filter(Producto => Producto.rareza === rareza);
+        return this.listaProductos.filter(producto => producto.rareza === rareza);
     }
 
     // Aplicar un descuento a los productos que sean de un tipo o rareza concreta
-    aplicarDescuento(tipoRareza) {
-        for (let i = 0; i < p.length; i++) {
-            if (p[i].tipo === tipoRareza) {
-                p[i].precio -= 50;
-            }
-            
-        }
+    aplicarDescuento(rareza, porcentaje) {
+        return Mercado.map(producto => producto.rareza === rareza ? p.aplicarDescuento(porcentaje) : producto);
     }
 
     // Buscar un producto por su nombre
@@ -29,7 +24,7 @@ export class Mercado {
     }
 
     // Mostrar un producto (se llamará al método que tiene este producto)
-    mostrarProducto(nombre) {
+    mostrarProducto() {
         return p.presentar();
     }
 }

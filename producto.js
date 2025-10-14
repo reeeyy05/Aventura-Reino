@@ -1,4 +1,4 @@
-class Producto {
+export class Producto {
     nombre;
     precio; 
     rareza;
@@ -27,10 +27,8 @@ class Producto {
 
     //Aplicar un descuento: Le llega un valor y devuelve una copia de ese producto modificado.
     aplicarDescuento(porcentaje) {
-        const copia = structuredClone(this);
+        const copia = structuredClone(this.precio);
         copia.precio = Math.round(this.precio * (1 - porcentaje / 100));
         return copia;
     }
 }
-
-export { Producto };
