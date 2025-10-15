@@ -88,8 +88,8 @@ export class Jugadores {
 //Exportar la clase Jugadores
 
 // const jugador1 = new Jugadores('Heroe');
-// jugador1.añadirObjeto({ nombre: 'Espada', tipo: 'arma', ataque: 15 });
-// jugador1.añadirObjeto({ nombre: 'Escudo', tipo: 'armadura', defensa: 10 });
+// jugador1.anadirObjeto({ nombre: 'Espada', tipo: 'arma', ataque: 15 });
+// jugador1.anadirObjeto({ nombre: 'Escudo', tipo: 'armadura', defensa: 10 });
 // jugador1.sumarPuntos(50);
 
 // console.log(jugador1.mostrar());
