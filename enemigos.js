@@ -13,8 +13,8 @@ export class Enemigos {
         this.puntosvida = puntosvida; //Vida del enemigo
     }
 
-   //Metodo para presentacion del enemigo
-     presentarse(){
+    //Metodo para presentacion del enemigo
+    presentarse() {
         return `Soy ${this.nombre}, el enemigo tengo ${this.nivelataque} de ataque y ${this.puntosvida} de vida `;
     }
 }
@@ -36,7 +36,7 @@ export class JefeFinal extends Enemigos {
      */
     constructor(nombre, nivelataque, puntosvida, habilidadespecial, multiplicardanio = 2.0) {
         super('jefe', nombre, nivelataque, puntosvida);
-        this.tipo = 'Jefe' 
+        this.tipo = 'Jefe'
         this.habilidadespecial = habilidadespecial;
         this.multiplicardanio = multiplicardanio;
     }
@@ -46,13 +46,7 @@ export class JefeFinal extends Enemigos {
      * @returns {string} Descripción especial del jefe
      * Ejemplo: "Soy Dragón, el jefe final. Mi habilidad especial es: Llamarada"
      */
-    presentarse(){
+    presentarse() {
         return `Soy ${this.nombre}, el jefe final. Mi habilidad especial es: ${this.habilidadespecial}`;
     }
 }
-
-
-
-
-
-
