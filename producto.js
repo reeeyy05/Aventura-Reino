@@ -44,20 +44,20 @@ class Producto {
     * @returns Nuevo precio tras aplicar el descuento.
     */
     aplicarDescuento(porcentaje) {
-       if (porcentaje < 0) porcentaje = 0;
-       if (porcentaje > 100) porcentaje = 100; 
-       
-       const nuevoPrecio = this.precio * (1 - porcentaje / 100);
-       this.precio = Math.round(nuevoPrecio);
-       return this.precio;
+        if (porcentaje < 0) porcentaje = 0;
+        if (porcentaje > 100) porcentaje = 100;
+
+        const nuevoPrecio = this.precio * (1 - porcentaje / 100);
+        this.precio = Math.round(nuevoPrecio);
+        return this.precio;
     }
 
-    
+
 }
 
 export { Producto };
 
-export const EUR = new Intl.NumberFormat('es-ES' , {
+export const EUR = new Intl.NumberFormat('es-ES', {
     style: 'currency'
     , currency: 'EUR'
 });
