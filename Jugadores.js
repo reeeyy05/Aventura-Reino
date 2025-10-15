@@ -16,7 +16,7 @@ export class Jugadores {
     }
 
     //añadir objetos al inventario
-    añadirObjeto(objeto) {
+    anadirObjeto(objeto) {
         const objetoClone = {
             ...objeto
         };

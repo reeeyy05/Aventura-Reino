@@ -1,4 +1,4 @@
-class Producto {
+export class Producto {
     nombre;
     precio;
     rareza;
@@ -54,8 +54,6 @@ class Producto {
 
 
 }
-
-export { Producto };
 
 export const EUR = new Intl.NumberFormat('es-ES', {
     style: 'currency'

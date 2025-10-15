@@ -1,4 +1,4 @@
-import p from '/producto.js';
+import p from '/Producto.js';
 
 export class Mercado {
 
