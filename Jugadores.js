@@ -80,7 +80,7 @@ export class Jugadores {
             vidaMaxima: this.vidaMaxima,
             ataque: this.ataqueTotal(),
             defensa: this.defensaTotal(),
-            inventario: this.inventario
+            inventario: this.inventarioPorTipo()
         };
     }
 }
