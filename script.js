@@ -1,7 +1,5 @@
-//importar la clase Jugadores
-import {
-    Jugadores
-} from './Jugadores.js';
+//importar las clases
+import {Jugadores} from './Jugadores.js';
 
 // bienvenida
 console.log("🏰Bienvenidos a la Aventura del Reino🏰");
@@ -11,3 +9,8 @@ const jugador1 = new Jugadores('Paco');
 const jugador2 = new Jugadores('Juan');
 const jugador3 = new Jugadores('Gustavo');
 console.log("👤Jugadores creados: ", jugador1.nombre, jugador2.nombre, jugador3.nombre);
+
+//mostrar jugadores
+console.log(jugador1.mostrar());
+console.log(jugador2.mostrar());
+console.log(jugador3.mostrar());
