@@ -54,6 +54,7 @@ export class Producto {
 
 
 }
+export default Producto;
 
 export const EUR = new Intl.NumberFormat('es-ES', {
     style: 'currency'
