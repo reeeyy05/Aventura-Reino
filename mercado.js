@@ -1,6 +1,8 @@
-import { Producto } from '/Producto.js';
+import { Producto } from './Producto.js';
 
 export class Mercado {
+
+
 
     /**
      * Crea un nuevo mercado con una lista de productos.
@@ -50,6 +52,6 @@ export class Mercado {
      * @returns Descripción de todos los productos en el mercado
      */
     mostrarProducto() {
-        return Producto.presentar();
+        return this.listaProductos.map(producto => producto.presentar());
     }
 }

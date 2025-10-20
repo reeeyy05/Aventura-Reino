@@ -1,5 +1,5 @@
 import { Mercado } from "./Mercado.js";
-import { EUR } from "./producto.js";
+import { EUR } from "./Producto.js";
 
 const mercado = new Mercado();
 
@@ -14,7 +14,7 @@ const compras = [
 const rarezasConDescuento = ["Comun", "Raro"];
 
 console.log('🛒 Mercado Disponible');
-mercado.mostrarProducto();
+mercado.mostrarProducto().forEach(mer => console.log(mer));
 
 console.log('🤑 ¡Promoción! 20% de descuento en items RAROS\n');
 

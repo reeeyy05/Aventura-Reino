@@ -27,7 +27,9 @@ export class Producto {
     */
     presentar() {
         const precioFormateado = this.formatearPrecio();
-        return `El producto ${this.nombre} es de tipo ${this.tipo}, tiene una rareza de ${this.rareza}, un precio de ${EUR.format(this.precio)} y otorga un bonus de ${this.bonus}.`;
+        const Bonus = Object.entries(this.bonus).map(([clave, valor]) => `${clave}: ${valor}`);
+
+        return `El producto ${this.nombre} es de tipo ${this.tipo}, tiene una rareza de ${this.rareza}, un precio de ${EUR.format(this.precio)} y otorga un bonus de ${Bonus}.`;
     }
 
     /**
