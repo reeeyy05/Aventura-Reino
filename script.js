@@ -1,38 +1,32 @@
-import { Mercado } from "./mercado.js";
+import { Mercado } from "./Mercado.js";
 import { EUR } from "./producto.js";
 
 const mercado = new Mercado();
 
 const compras = [
-    { personaje: "Guerrero", producto: "Espada Basica" },
-    { personaje: "Guerrero", producto: "Armadura Ligera" },
-    { personaje: "Cazador", producto: "Arco Largo" },
-    { personaje: "Mago", producto: "Pocion de Mana" },
-    { personaje: "Asesino", producto: "Daga Envenenada" }
+    { personaje: "Guerrero", producto: mercado.buscarProducto("Espada Basica") },
+    { personaje: "Mago", producto: mercado.buscarProducto("Pocion de Vida") },
+    { personaje: "Arquero", producto: mercado.buscarProducto("Arco Largo") },
+    { personaje: "Guerrero", producto: mercado.buscarProducto("Armadura Ligera") },
+    { personaje: "Mago", producto: mercado.buscarProducto("Pocion de Mana") }
 ];
 
-console.log('🛒 Mercado disponible:\n');
+const rarezasConDescuento = ["Comun", "Raro"];
 
-mercado.listaProductos.forEach(producto => {
-    const bonusStr = Object.entries(producto.bonus)
-        .map(([clave, valor]) => `${clave}+${valor}`)
-        .join(', ');
-    console.log(`- ${producto.nombre} [${producto.rareza.toLowerCase()}] (${producto.tipo}) - ${EUR.format(producto.precio)} - ${bonusStr}`);
-});
+console.log('🛒 Mercado Disponible');
+mercado.mostrarProducto();
 
-const rarezasConDescuento = ["Raro", "Rara"];
-
-console.log('🤑 ¡Promoción! 20% de descuento en items raros\n');
+console.log('🤑 ¡Promoción! 20% de descuento en items RAROS\n');
 
 mercado.listaProductos.forEach(producto => {
     if (rarezasConDescuento.includes(producto.rareza)) {
         producto.aplicarDescuento(20);
-        console.log(`${producto.nombre}: ${EUR.format(producto.precio)}`);
+        console.log(`${producto.nombre}: ${EUR.format(producto.precio)}`)
     }
 });
 
-console.log('\n🛒 Compras realizadas:');
+console.log('\n🛒 Compras realizadas:\n');
 compras.forEach(compra => {
-    const nombreProducto = typeof compra.producto === 'string' ? compra.producto : 'Producto desconocido';
-    console.log(`- ${compra.personaje} ha comprado ${nombreProducto}`);
+    console.log(`-${compra.personaje} ha comprado ${compra.producto}`);
 });
+
