@@ -1,5 +1,5 @@
 import { Jugadores } from './Jugadores.js';
-import { Enemigos, JefeFinal } from './enemigos.js';
+import { Enemigos, JefeFinal } from './Enemigos.js';
 
 export function batalla(player, enemy) {
 	if (!player || !enemy) {

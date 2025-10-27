@@ -1,9 +1,6 @@
-import {Producto} from './producto.js';
+import { Producto } from './Producto.js';
 
 export class Mercado {
-
-
-
     /**
      * Crea un nuevo mercado con una lista de productos.
      */
