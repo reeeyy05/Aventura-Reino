@@ -1,4 +1,4 @@
-import { Producto } from './Producto.js';
+import {Producto} from './producto.js';
 
 export class Mercado {
 
